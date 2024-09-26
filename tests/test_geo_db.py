@@ -10,6 +10,13 @@ class TestGeoDB:
         assert True
 
     @staticmethod
+    def test_add_zero_then_delete_all():
+        bits_of_precision = 16
+        db = GeoDBFactory.new_database(bits_of_precision)
+
+        assert len(db.delete_all(0, 0, 0)) == 0
+
+    @staticmethod
     def test_insert_and_delete_all():
         bits_of_precision = 16
         db = GeoDBFactory.new_database(bits_of_precision)
